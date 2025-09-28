@@ -1,11 +1,11 @@
-m=10;
-n=2;
+m=10; 
+n=2; 
 S=rand(m,n);
 
 % Initialize cell array S_flat
 % Faster execution
-size(S,2)
-q=num2cell(S,2);
+size(S,n)
+q=num2cell(S,n);
 x1=0;
 F={};
 to_remove = false(1, length(q));
@@ -22,7 +22,7 @@ while length(q)>=1
         q = reshape(q, n, []);
         q = q'; 
         q=sortrows(q, 1);
-        q=num2cell(q,2);
+        q=num2cell(q,n);
     end
     str={};
     current_front{end+1} = q{1};
